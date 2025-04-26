@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Food - Food Waste Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-seedling"></i> EcoFood</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="donation.html"><i class="fas fa-hand-holding-heart"></i> Donate</a></li>
+                <li><a href="add-food.html" class="active"><i class="fas fa-plus-circle"></i> Add Food</a></li>
+                <li><a href="analytics.html"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Add Surplus Food</h1>
+        <p>Track your inventory and manage food items before they go to waste</p>
+    </section>
+
+    <section class="add-food-dashboard">
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <i class="fas fa-clock"></i>
+                <h3>5</h3>
+                <p>Items Expiring Soon</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-archive"></i>
+                <h3>24</h3>
+                <p>Total Inventory Items</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-recycle"></i>
+                <h3>12</h3>
+                <p>Items Saved This Month</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="inventory-action-buttons">
+        <a href="#add-item-form" class="btn primary"><i class="fas fa-plus"></i> Add New Food Item</a>
+        <a href="#inventory-list" class="btn secondary"><i class="fas fa-list"></i> View Inventory</a>
+    </section>
+
+    <section id="add-item-form" class="add-item-section">
+        <h2>Add New Food Item</h2>
+        <form class="add-food-form">
+            <div class="form-group">
+                <label for="item-name">Food Item Name</label>
+                <input type="text" id="item-name" placeholder="E.g., Tomatoes, Bread, Rice" required>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" required>
+                        <option value="" selected disabled>Select Category</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="vegetables">Vegetables</option>
+                        <option value="dairy">Dairy</option>
+                        <option value="grains">Grains & Cereals</option>
+                        <option value="meat">Meat & Poultry</option>
+                        <option value="seafood">Seafood</option>
+                        <option value="bakery">Bakery</option>
+                        <option value="canned">Canned Goods</option>
+                        <option value="frozen">Frozen Food</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="storage-location">Storage Location</label>
+                    <select id="storage-location" required>
+                        <option value="" selected disabled>Select Location</option>
+                        <option value="fridge">Refrigerator</option>
+                        <option value="freezer">Freezer</option>
+                        <option value="pantry">Pantry</option>
+                        <option value="counter">Counter/Shelf</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" min="1" value="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="unit">Unit</label>
+                    <select id="unit" required>
+                        <option value="kg">Kilograms</option>
+                        <option value="g">Grams</option>
+                        <option value="lb">Pounds</option>
+                        <option value="items">Items</option>
+                        <option value="servings">Servings</option>
+                        <option value="packages">Packages</option>
+                        <option value="liters">Liters</option>
+                        <option value="ml">Milliliters</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="purchase-date">Purchase/Preparation Date</label>
+                    <input type="date" id="purchase-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="expiry-date">Expiry/Best Before Date</label>
+                    <input type="date" id="expiry-date" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="condition">Current Condition</label>
+                <select id="condition" required>
+                    <option value="excellent">Excellent (Fresh/New)</option>
+                    <option value="good">Good (Still fresh but use soon)</option>
+                    <option value="acceptable">Acceptable (Use immediately)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="item-photo">Upload Photo (Optional)</label>
+                <input type="file" id="item-photo" accept="image/*">
+            </div>
+            
+            <div class="form-group">
+                <label for="notes">Additional Notes</label>
+                <textarea id="notes" placeholder="Any specific storage instructions or other details"></textarea>
+            </div>
+            
+            <div class="form-row form-checkbox">
+                <input type="checkbox" id="donation-eligible" checked>
+                <label for="donation-eligible">Available for donation if not used</label>
+            </div>
+            
+            <div class="form-row form-checkbox">
+                <input type="checkbox" id="reminder">
+                <label for="reminder">Set reminder before expiration</label>
+            </div>
+            
+            <div class="reminder-settings" id="reminder-settings" style="display: none;">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="reminder-days">Days Before Expiry</label>
+                        <input type="number" id="reminder-days" min="1" value="2">
+                    </div>
+                    <div class="form-group">
+                        <label for="reminder-method">Reminder Method</label>
+                        <select id="reminder-method">
+                            <option value="email">Email</option>
+                            <option value="notification">App Notification</option>
+                            <option value="both">Both</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-submit">
+                <button type="submit" class="btn primary">Add to Inventory</button>
+                <button type="reset" class="btn secondary">Clear Form</button>
+            </div>
+        </form>
+    </section>
+
+    <section id="inventory-list" class="inventory-section">
+        <h2>Current Inventory</h2>
+        
+        <div class="inventory-filters">
+            <div class="filter-group">
+                <label for="filter-category">Filter by Category:</label>
+                <select id="filter-category">
+                    <option value="all">All Categories</option>
+                    <option value="fruits">Fruits</option>
+                    <option value="vegetables">Vegetables</option>
+                    <option value="dairy">Dairy</option>
+                    <option value="grains">Grains & Cereals</option>
+                    <option value="meat">Meat & Poultry</option>
+                    <option value="seafood">Seafood</option>
+                    <option value="bakery">Bakery</option>
+                    <option value="canned">Canned Goods</option>
+                    <option value="frozen">Frozen Food</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="filter-expiry">Sort by:</label>
+                <select id="filter-expiry">
+                    <option value="expiry-asc">Expiring Soon</option>
+                    <option value="date-desc">Recently Added</option>
+                    <option value="name-asc">Name (A-Z)</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="search-inventory">Search:</label>
+                <input type="text" id="search-inventory" placeholder="Search items...">
+            </div>
+        </div>
+        
+        <div class="inventory-table-container">
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Purchase Date</th>
+                        <th>Expiry Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample inventory data -->
+                    <tr class="expiring-soon">
+                        <td>
+                            <div class="item-name-cell">
+                                <img src="https://via.placeholder.com/40" alt="Milk">
+                                <span>Milk</span>
+                            </div>
+                        </td>
+                        <td>Dairy</td>
+                        <td>1 liter</td>
+                        <td>2023-07-15</td>
+                        <td>2023-07-20</td>
+                        <td><span class="status-badge urgent">Expires in 2 days</span></td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn donate"><i class="fas fa-hand-holding-heart"></i></button>
+                                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item-name-cell">
+                                <img src="https://via.placeholder.com/40" alt="Apples">
+                                <span>Apples</span>
+                            </div>
+                        </td>
+                        <td>Fruits</td>
+                        <td>1 kg</td>
+                        <td>2023-07-16</td>
+                        <td>2023-07-26</td>
+                        <td><span class="status-badge good">Good for 8 days</span></td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn donate"><i class="fas fa-hand-holding-heart"></i></button>
+                                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item-name-cell">
+                                <img src="https://via.placeholder.com/40" alt="Bread">
+                                <span>Bread</span>
+                            </div>
+                        </td>
+                        <td>Bakery</td>
+                        <td>1 loaf</td>
+                        <td>2023-07-17</td>
+                        <td>2023-07-21</td>
+                        <td><span class="status-badge warning">Expires in 3 days</span></td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn donate"><i class="fas fa-hand-holding-heart"></i></button>
+                                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item-name-cell">
+                                <img src="https://via.placeholder.com/40" alt="Chicken">
+                                <span>Chicken Breast</span>
+                            </div>
+                        </td>
+                        <td>Meat</td>
+                        <td>500 g</td>
+                        <td>2023-07-17</td>
+                        <td>2023-07-22</td>
+                        <td><span class="status-badge warning">Expires in 4 days</span></td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn donate"><i class="fas fa-hand-holding-heart"></i></button>
+                                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item-name-cell">
+                                <img src="https://via.placeholder.com/40" alt="Rice">
+                                <span>Basmati Rice</span>
+                            </div>
+                        </td>
+                        <td>Grains</td>
+                        <td>2 kg</td>
+                        <td>2023-07-01</td>
+                        <td>2023-12-31</td>
+                        <td><span class="status-badge good">Good for 6 months</span></td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn donate"><i class="fas fa-hand-holding-heart"></i></button>
+                                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="inventory-pagination">
+            <button class="pagination-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <section class="food-storage-tips">
+        <h2>Food Storage Tips</h2>
+        <div class="tips-container">
+            <div class="tip-card">
+                <div class="tip-icon">
+                    <i class="fas fa-temperature-low"></i>
+                </div>
+                <h3>Refrigerator Organization</h3>
+                <p>Store ready-to-eat foods on top shelves, raw ingredients on bottom shelves to prevent cross-contamination.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-icon">
+                    <i class="fas fa-snowflake"></i>
+                </div>
+                <h3>Freezing Guidelines</h3>
+                <p>Label containers with contents and date. Most frozen food maintains quality for 3-6 months.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-icon">
+                    <i class="fas fa-apple-alt"></i>
+                </div>
+                <h3>Fruit & Vegetable Care</h3>
+                <p>Store most fruits and vegetables in high humidity drawers. Keep bananas, apples, and tomatoes separate.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-icon">
+                    <i class="fas fa-bread-slice"></i>
+                </div>
+                <h3>Pantry Management</h3>
+                <p>Use the FIFO method (First In, First Out) to rotate products and utilize older items first.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2><i class="fas fa-seedling"></i> EcoFood</h2>
+                <p>Reducing waste, feeding communities</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="donation.html">Donate</a></li>
+                    <li><a href="add-food.html">Add Food</a></li>
+                    <li><a href="analytics.html">Analytics</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 EcoFood | Food Waste Management System</p>
+        </div>
+    </footer>
+</body>
+</html> 

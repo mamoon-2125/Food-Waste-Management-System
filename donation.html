@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Food - Food Waste Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-seedling"></i> EcoFood</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="donation.html" class="active"><i class="fas fa-hand-holding-heart"></i> Donate</a></li>
+                <li><a href="add-food.html"><i class="fas fa-plus-circle"></i> Add Food</a></li>
+                <li><a href="analytics.html"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Donate Food</h1>
+        <p>Share your surplus food with those who need it most</p>
+    </section>
+
+    <section class="donation-options">
+        <div class="option-container">
+            <div class="donation-option">
+                <div class="option-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3>Cooked Food</h3>
+                <p>Donate prepared meals that are still fresh and can be consumed within 24 hours.</p>
+                <a href="#donation-form" class="btn secondary">Donate Cooked Food</a>
+            </div>
+            <div class="donation-option">
+                <div class="option-icon">
+                    <i class="fas fa-apple-alt"></i>
+                </div>
+                <h3>Fresh Produce</h3>
+                <p>Donate fruits, vegetables, and other fresh produce items that are still good to eat.</p>
+                <a href="#donation-form" class="btn secondary">Donate Produce</a>
+            </div>
+            <div class="donation-option">
+                <div class="option-icon">
+                    <i class="fas fa-box"></i>
+                </div>
+                <h3>Packaged Foods</h3>
+                <p>Donate unopened packaged foods or canned goods that haven't passed their expiration date.</p>
+                <a href="#donation-form" class="btn secondary">Donate Packaged Food</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="donation-process">
+        <h2>How Donation Works</h2>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Fill the Form</h3>
+                    <p>Share details about your food donation including type, quantity, and freshness.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Upload Photos</h3>
+                    <p>Add clear images of the food you're donating to help recipients assess the items.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Set Pickup Details</h3>
+                    <p>Specify when and where the food will be available for pickup or if you can deliver.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Connect With Recipients</h3>
+                    <p>Our system notifies nearby organizations or individuals who can use your donation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="donation-form" class="donation-form-section">
+        <h2>Donation Form</h2>
+        <form class="donation-form">
+            <div class="form-group">
+                <label for="food-type">Food Type</label>
+                <select id="food-type" required>
+                    <option value="" selected disabled>Select Food Type</option>
+                    <option value="cooked">Cooked Food</option>
+                    <option value="produce">Fresh Produce</option>
+                    <option value="packaged">Packaged Food</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="food-name">Food Name/Description</label>
+                <input type="text" id="food-name" placeholder="E.g., Vegetable Curry, Fresh Apples" required>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" min="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="unit">Unit</label>
+                    <select id="unit" required>
+                        <option value="servings">Servings</option>
+                        <option value="kg">Kilograms</option>
+                        <option value="items">Items</option>
+                        <option value="packages">Packages</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="preparation-date">Preparation/Purchase Date</label>
+                <input type="date" id="preparation-date" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="expiry-date">Best Before/Expiry Date</label>
+                <input type="date" id="expiry-date" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="allergens">Allergens (if any)</label>
+                <input type="text" id="allergens" placeholder="E.g., nuts, dairy, gluten">
+            </div>
+            
+            <div class="form-group">
+                <label for="storage">Storage Instructions</label>
+                <textarea id="storage" placeholder="E.g., Keep refrigerated, consume within 2 days"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="photos">Upload Photos</label>
+                <input type="file" id="photos" accept="image/*" multiple>
+                <p class="form-help">Upload up to 3 clear photos of the food items</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="pickup-address">Pickup Address</label>
+                <textarea id="pickup-address" placeholder="Enter the address for pickup" required></textarea>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="pickup-date">Pickup Date</label>
+                    <input type="date" id="pickup-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pickup-time">Pickup Time</label>
+                    <input type="time" id="pickup-time" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="additional-notes">Additional Notes</label>
+                <textarea id="additional-notes" placeholder="Any other information you'd like to share"></textarea>
+            </div>
+            
+            <div class="form-submit">
+                <button type="submit" class="btn primary">Submit Donation</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="donation-guidelines">
+        <h2>Food Donation Guidelines</h2>
+        <div class="guidelines-container">
+            <div class="guideline">
+                <div class="guideline-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="guideline-content">
+                    <h3>What to Donate</h3>
+                    <ul>
+                        <li>Fresh fruits and vegetables</li>
+                        <li>Unopened packaged foods</li>
+                        <li>Canned goods (not dented or damaged)</li>
+                        <li>Freshly prepared meals</li>
+                        <li>Baked goods (within 2 days of baking)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="guideline">
+                <div class="guideline-icon">
+                    <i class="fas fa-times-circle"></i>
+                </div>
+                <div class="guideline-content">
+                    <h3>What Not to Donate</h3>
+                    <ul>
+                        <li>Food past its expiration date</li>
+                        <li>Partially consumed items</li>
+                        <li>Food with signs of spoilage</li>
+                        <li>Home-canned goods</li>
+                        <li>Food stored at unsafe temperatures</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2><i class="fas fa-seedling"></i> EcoFood</h2>
+                <p>Reducing waste, feeding communities</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="donation.html">Donate</a></li>
+                    <li><a href="add-food.html">Add Food</a></li>
+                    <li><a href="analytics.html">Analytics</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 EcoFood | Food Waste Management System</p>
+        </div>
+    </footer>
+</body>
+</html> 

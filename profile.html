@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Food Waste Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-seedling"></i> EcoFood</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="donation.html"><i class="fas fa-hand-holding-heart"></i> Donate</a></li>
+                <li><a href="add-food.html"><i class="fas fa-plus-circle"></i> Add Food</a></li>
+                <li><a href="analytics.html"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                <li><a href="profile.html" class="active"><i class="fas fa-user"></i> Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="profile-header">
+        <div class="profile-cover">
+            <div class="edit-cover">
+                <button class="edit-btn"><i class="fas fa-camera"></i></button>
+            </div>
+        </div>
+        <div class="profile-info">
+            <div class="profile-picture">
+                <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Profile Picture">
+                <button class="edit-picture-btn"><i class="fas fa-camera"></i></button>
+            </div>
+            <div class="profile-details">
+                <h1>Mohammed Mamoon Ameen</h1>
+                <p class="profile-type"><i class="fas fa-medal"></i> Gold Contributor</p>
+                <p class="profile-location"><i class="fas fa-map-marker-alt"></i>Warangal, Telangana</p>
+                <div class="profile-stats">
+                    <div class="stat">
+                        <span class="stat-value">42</span>
+                        <span class="stat-label">Donations</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">120</span>
+                        <span class="stat-label">Impact Points</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">15</span>
+                        <span class="stat-label">Badges</span>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-actions">
+                <button class="btn secondary"><i class="fas fa-edit"></i> Edit Profile</button>
+                <button class="btn primary"><i class="fas fa-share-alt"></i> Share Impact</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="profile-tabs">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="personal-info">Personal Info</button>
+            <button class="tab-btn" data-tab="donation-history">Donation History</button>
+            <button class="tab-btn" data-tab="badges">Badges & Achievements</button>
+            <button class="tab-btn" data-tab="settings">Settings</button>
+        </div>
+    </section>
+
+    <section id="personal-info" class="tab-content active">
+        <div class="profile-section">
+            <div class="section-header">
+                <h2>Personal Information</h2>
+                <button class="btn secondary small"><i class="fas fa-edit"></i> Edit</button>
+            </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>Full Name</h3>
+                    <p>Mohammed Mamoon Ameen</p>
+                </div>
+                <div class="info-item">
+                    <h3>Email</h3>
+                    <p>mamoonameen@gmail.com</p>
+                </div>
+                <div class="info-item">
+                    <h3>Phone</h3>
+                    <p>+91 7981246629</p>
+                </div>
+                <div class="info-item">
+                    <h3>Address</h3>
+                    <p>Kareembad, Warangal, Telangana</p>
+                </div>
+                <div class="info-item">
+                    <h3>Organization Type</h3>
+                    <p>Group</p>
+                </div>
+                <div class="info-item">
+                    <h3>Member Since</h3>
+                    <p>April 15, 2025</p>
+                </div>
+                <div class="info-item">
+                    <h3>Group Name</h3>
+                    <p>Eco Saviours</p>
+                </div>
+                <div class="info-item">
+                    <h3>Team Members</h3>
+                    <p><ul>
+                        <li>P. Navya</li>
+                        <li>MD. Sohel</li>
+                        <li>G. Shrinith</li>
+                    </ul></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <div class="section-header">
+                <h2>Preferred Donation Settings</h2>
+                <button class="btn secondary small"><i class="fas fa-edit"></i> Edit</button>
+            </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>Preferred Donation Type</h3>
+                    <p>Fresh Produce, Packaged Foods</p>
+                </div>
+                <div class="info-item">
+                    <h3>Pickup Availability</h3>
+                    <p>Weekdays: 5 PM - 8 PM, Weekends: 10 AM - 6 PM</p>
+                </div>
+                <div class="info-item">
+                    <h3>Donation Radius</h3>
+                    <p>10 miles</p>
+                </div>
+                <div class="info-item">
+                    <h3>Notification Preferences</h3>
+                    <p>Email, Push Notifications</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <div class="section-header">
+                <h2>Connected Accounts</h2>
+                <button class="btn secondary small"><i class="fas fa-plus"></i> Add Account</button>
+            </div>
+            <div class="connected-accounts">
+                <div class="account-item connected">
+                    <i class="fab fa-google"></i>
+                    <span>Google</span>
+                    <span class="connection-status">Connected</span>
+                </div>
+                <div class="account-item connected">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                    <span class="connection-status">Connected</span>
+                </div>
+                <div class="account-item">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                    <button class="btn secondary small">Connect</button>
+                </div>
+                <div class="account-item">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                    <button class="btn secondary small">Connect</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="donation-history" class="tab-content">
+        <div class="profile-section">
+            <div class="section-header">
+                <h2>Donation History</h2>
+                <div class="section-controls">
+                    <input type="text" placeholder="Search donations..." class="search-input">
+                    <select class="filter-dropdown">
+                        <option value="all">All Time</option>
+                        <option value="month">This Month</option>
+                        <option value="quarter">This Quarter</option>
+                        <option value="year">This Year</option>
+                    </select>
+                </div>
+            </div>
+            <div class="donation-history-table">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Donation Items</th>
+                            <th>Quantity</th>
+                            <th>Recipient</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jul 20, 2023</td>
+                            <td>Fresh Vegetables</td>
+                            <td>5 kg</td>
+                            <td>Community Kitchen</td>
+                            <td><span class="status-badge complete">Completed</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn repeat"><i class="fas fa-redo"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jul 15, 2023</td>
+                            <td>Rice and Pasta</td>
+                            <td>8 kg</td>
+                            <td>Food Bank</td>
+                            <td><span class="status-badge complete">Completed</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn repeat"><i class="fas fa-redo"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jul 10, 2023</td>
+                            <td>Dairy Products</td>
+                            <td>2 kg</td>
+                            <td>Local School</td>
+                            <td><span class="status-badge complete">Completed</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn repeat"><i class="fas fa-redo"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jul 05, 2023</td>
+                            <td>Bread and Pastries</td>
+                            <td>3 kg</td>
+                            <td>Homeless Shelter</td>
+                            <td><span class="status-badge complete">Completed</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn repeat"><i class="fas fa-redo"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jun 28, 2023</td>
+                            <td>Assorted Canned Goods</td>
+                            <td>10 kg</td>
+                            <td>Food Bank</td>
+                            <td><span class="status-badge complete">Completed</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn repeat"><i class="fas fa-redo"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-pagination">
+                <button class="pagination-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="badges" class="tab-content">
+        <div class="profile-section">
+            <div class="section-header">
+                <h2>Badges & Achievements</h2>
+                <button class="btn secondary small"><i class="fas fa-share-alt"></i> Share Achievements</button>
+            </div>
+            <div class="badges-showcase">
+                <div class="badge-card earned">
+                    <div class="badge-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>First Donation</h3>
+                    <p>Made your first food donation</p>
+                    <span class="earned-date">Jan 20, 2023</span>
+                </div>
+                <div class="badge-card earned">
+                    <div class="badge-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>On Fire</h3>
+                    <p>Made 5 donations in a row</p>
+                    <span class="earned-date">Mar 15, 2023</span>
+                </div>
+                <div class="badge-card earned">
+                    <div class="badge-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Hero</h3>
+                    <p>Helped feed 50+ people</p>
+                    <span class="earned-date">Apr 22, 2023</span>
+                </div>
+                <div class="badge-card earned">
+                    <div class="badge-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Waste Warrior</h3>
+                    <p>Saved 25kg of food from waste</p>
+                    <span class="earned-date">May 10, 2023</span>
+                </div>
+                <div class="badge-card earned">
+                    <div class="badge-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Consistency</h3>
+                    <p>Active for 3 consecutive months</p>
+                    <span class="earned-date">Jun 05, 2023</span>
+                </div>
+                <div class="badge-card">
+                    <div class="badge-icon locked">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Donation Champion</h3>
+                    <p>Make 50 total donations</p>
+                    <div class="progress-container">
+                        <div class="progress-text">42/50 completed</div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 84%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="badge-card">
+                    <div class="badge-icon locked">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Environmental Hero</h3>
+                    <p>Save 100kg of CO₂ emissions</p>
+                    <div class="progress-container">
+                        <div class="progress-text">42/100 kg saved</div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 42%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="badge-card">
+                    <div class="badge-icon locked">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Platinum Contributor</h3>
+                    <p>Earn 250 impact points</p>
+                    <div class="progress-container">
+                        <div class="progress-text">120/250 points</div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 48%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <div class="section-header">
+                <h2>Impact Certificate</h2>
+                <button class="btn secondary small"><i class="fas fa-download"></i> Download PDF</button>
+            </div>
+            <div class="certificate-container">
+                <div class="certificate">
+                    <div class="certificate-header">
+                        <div class="certificate-logo">
+                            <i class="fas fa-seedling"></i> EcoFood
+                        </div>
+                        <h2>Certificate of Impact</h2>
+                    </div>
+                    <div class="certificate-body">
+                        <p>This certificate recognizes</p>
+                        <h3>John Doe</h3>
+                        <p>for outstanding contribution to reducing food waste and supporting the community</p>
+                        <div class="certificate-stats">
+                            <div class="cert-stat">
+                                <span class="cert-stat-value">42</span>
+                                <span class="cert-stat-label">Donations Made</span>
+                            </div>
+                            <div class="cert-stat">
+                                <span class="cert-stat-value">85 kg</span>
+                                <span class="cert-stat-label">Food Waste Prevented</span>
+                            </div>
+                            <div class="cert-stat">
+                                <span class="cert-stat-value">120+</span>
+                                <span class="cert-stat-label">People Helped</span>
+                            </div>
+                        </div>
+                        <div class="certificate-date">
+                            <p>July 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="settings" class="tab-content">
+        <div class="profile-section">
+            <div class="section-header">
+                <h2>Account Settings</h2>
+            </div>
+            <form class="settings-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" value="john.doe@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="current-password">Current Password</label>
+                    <input type="password" id="current-password" placeholder="Enter your current password">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="new-password">New Password</label>
+                        <input type="password" id="new-password" placeholder="Enter new password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm New Password</label>
+                        <input type="password" id="confirm-password" placeholder="Confirm new password">
+                    </div>
+                </div>
+                
+                <div class="form-submit">
+                    <button type="submit" class="btn primary">Update Password</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="profile-section">
+            <div class="section-header">
+                <h2>Notification Preferences</h2>
+            </div>
+            <form class="settings-form">
+                <div class="setting-toggle">
+                    <div class="toggle-info">
+                        <h3>Email Notifications</h3>
+                        <p>Receive updates about donations, matches, and impact</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                
+                <div class="setting-toggle">
+                    <div class="toggle-info">
+                        <h3>Push Notifications</h3>
+                        <p>Receive real-time updates on your device</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                
+                <div class="setting-toggle">
+                    <div class="toggle-info">
+                        <h3>SMS Notifications</h3>
+                        <p>Receive text messages for important updates</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                
+                <div class="setting-toggle">
+                    <div class="toggle-info">
+                        <h3>Donation Reminders</h3>
+                        <p>Get reminders about recurring donations</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                
+                <div class="setting-toggle">
+                    <div class="toggle-info">
+                        <h3>Newsletter</h3>
+                        <p>Receive monthly newsletter with tips and stories</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                
+                <div class="form-submit">
+                    <button type="submit" class="btn primary">Save Preferences</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="profile-section">
+            <div class="section-header">
+                <h2>Privacy Settings</h2>
+            </div>
+            <form class="settings-form">
+                <div class="setting-toggle">
+                    <div class="toggle-info">
+                        <h3>Profile Visibility</h3>
+                        <p>Make your profile visible to other users</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                
+                <div class="setting-toggle">
+                    <div class="toggle-info">
+                        <h3>Share Impact Statistics</h3>
+                        <p>Allow your impact to be included in community statistics</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                
+                <div class="setting-toggle">
+                    <div class="toggle-info">
+                        <h3>Location Sharing</h3>
+                        <p>Share your approximate location for donation matching</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                
+                <div class="form-submit">
+                    <button type="submit" class="btn primary">Save Privacy Settings</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="profile-section">
+            <div class="section-header">
+                <h2>Account Management</h2>
+            </div>
+            <div class="account-management">
+                <div class="account-action">
+                    <div class="action-info">
+                        <h3>Export Personal Data</h3>
+                        <p>Download all your data in a portable format</p>
+                    </div>
+                    <button class="btn secondary">Export Data</button>
+                </div>
+                
+                <div class="account-action">
+                    <div class="action-info">
+                        <h3>Delete Account</h3>
+                        <p>Permanently delete your account and all associated data</p>
+                    </div>
+                    <button class="btn danger">Delete Account</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2><i class="fas fa-seedling"></i> EcoFood</h2>
+                <p>Reducing waste, feeding communities</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="donation.html">Donate</a></li>
+                    <li><a href="add-food.html">Add Food</a></li>
+                    <li><a href="analytics.html">Analytics</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 EcoFood | Food Waste Management System</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching functionality
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

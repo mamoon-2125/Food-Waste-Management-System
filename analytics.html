@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Food Waste Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for analytics charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-seedling"></i> EcoFood</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="donation.html"><i class="fas fa-hand-holding-heart"></i> Donate</a></li>
+                <li><a href="add-food.html"><i class="fas fa-plus-circle"></i> Add Food</a></li>
+                <li><a href="analytics.html" class="active"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Impact Analytics</h1>
+        <p>Track your contribution to reducing food waste and helping the community</p>
+    </section>
+
+    <section class="analytics-dashboard">
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h3>25</h3>
+                <p>Total Donations</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-leaf"></i>
+                <h3>85 kg</h3>
+                <p>Food Waste Prevented</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h3>120+</h3>
+                <p>People Fed</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-tree"></i>
+                <h3>42 kg</h3>
+                <p>CO₂ Emission Saved</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="analytics-time-filter">
+        <div class="time-filter">
+            <button class="time-btn active">Last Month</button>
+            <button class="time-btn">Last Quarter</button>
+            <button class="time-btn">Last Year</button>
+            <button class="time-btn">All Time</button>
+            <div class="custom-date">
+                <input type="date" id="date-from">
+                <span>to</span>
+                <input type="date" id="date-to">
+                <button class="btn secondary">Apply</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="analytics-charts">
+        <div class="chart-container">
+            <div class="chart-header">
+                <h2>Monthly Donation Trend</h2>
+                <div class="chart-controls">
+                    <button class="chart-control active"><i class="fas fa-chart-line"></i></button>
+                    <button class="chart-control"><i class="fas fa-chart-bar"></i></button>
+                    <button class="chart-control"><i class="fas fa-download"></i></button>
+                </div>
+            </div>
+            <div class="chart-body">
+                <canvas id="donationTrendChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="chart-row">
+            <div class="chart-container half">
+                <div class="chart-header">
+                    <h2>Donation by Food Category</h2>
+                    <div class="chart-controls">
+                        <button class="chart-control"><i class="fas fa-download"></i></button>
+                    </div>
+                </div>
+                <div class="chart-body">
+                    <canvas id="donationCategoryChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-container half">
+                <div class="chart-header">
+                    <h2>Environmental Impact</h2>
+                    <div class="chart-controls">
+                        <button class="chart-control"><i class="fas fa-download"></i></button>
+                    </div>
+                </div>
+                <div class="chart-body">
+                    <canvas id="environmentalImpactChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chart-row">
+            <div class="chart-container half">
+                <div class="chart-header">
+                    <h2>Average Food Wastage Trend</h2>
+                    <div class="chart-controls">
+                        <button class="chart-control"><i class="fas fa-download"></i></button>
+                    </div>
+                </div>
+                <div class="chart-body">
+                    <canvas id="wastageReductionChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-container half">
+                <div class="chart-header">
+                    <h2>Community Impact</h2>
+                    <div class="chart-controls">
+                        <button class="chart-control"><i class="fas fa-download"></i></button>
+                    </div>
+                </div>
+                <div class="chart-body">
+                    <canvas id="communityImpactChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="analytics-tables">
+        <div class="table-container">
+            <div class="table-header">
+                <h2>Recent Donations</h2>
+                <div class="table-controls">
+                    <button class="btn secondary">View All</button>
+                    <button class="btn secondary"><i class="fas fa-download"></i> Export</button>
+                </div>
+            </div>
+            <div class="table-body">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Food Item</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Recipient</th>
+                            <th>Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2023-07-20</td>
+                            <td>Fresh Vegetables</td>
+                            <td>Produce</td>
+                            <td>5 kg</td>
+                            <td>Community Kitchen</td>
+                            <td>15 meals served</td>
+                        </tr>
+                        <tr>
+                            <td>2023-07-18</td>
+                            <td>Bread and Pastries</td>
+                            <td>Bakery</td>
+                            <td>3 kg</td>
+                            <td>Homeless Shelter</td>
+                            <td>10 meals served</td>
+                        </tr>
+                        <tr>
+                            <td>2023-07-15</td>
+                            <td>Rice and Pasta</td>
+                            <td>Grains</td>
+                            <td>8 kg</td>
+                            <td>Food Bank</td>
+                            <td>24 meals served</td>
+                        </tr>
+                        <tr>
+                            <td>2023-07-12</td>
+                            <td>Canned Goods</td>
+                            <td>Packaged</td>
+                            <td>6 kg</td>
+                            <td>Charity Organization</td>
+                            <td>18 meals served</td>
+                        </tr>
+                        <tr>
+                            <td>2023-07-10</td>
+                            <td>Dairy Products</td>
+                            <td>Dairy</td>
+                            <td>2 kg</td>
+                            <td>Local School</td>
+                            <td>6 meals served</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="analytics-insights">
+        <h2>Personalized Insights</h2>
+        <div class="insights-container">
+            <div class="insight-card">
+                <div class="insight-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="insight-content">
+                    <h3>Food Waste Reduction</h3>
+                    <p>Your food waste has decreased by <strong>23%</strong> compared to last month. Great job!</p>
+                </div>
+            </div>
+            
+            <div class="insight-card">
+                <div class="insight-icon">
+                    <i class="fas fa-arrows-up-down"></i>
+                </div>
+                <div class="insight-content">
+                    <h3>Donation Trend</h3>
+                    <p>Your donations have increased by <strong>15%</strong> this month. You're making a bigger impact!</p>
+                </div>
+            </div>
+            
+            <div class="insight-card">
+                <div class="insight-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="insight-content">
+                    <h3>Top Category</h3>
+                    <p><strong>Fresh Produce</strong> is your most donated category, helping provide nutritious meals.</p>
+                </div>
+            </div>
+            
+            <div class="insight-card">
+                <div class="insight-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="insight-content">
+                    <h3>Consistency</h3>
+                    <p>You've been active for <strong>3 consecutive months</strong>. Keep up the consistent contribution!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="analytics-goals">
+        <h2>Your Impact Goals</h2>
+        <div class="goals-container">
+            <div class="goal-card">
+                <div class="goal-header">
+                    <h3>Monthly Donation Goal</h3>
+                    <p class="goal-progress">75% Complete</p>
+                </div>
+                <div class="goal-progress-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                </div>
+                <div class="goal-details">
+                    <p>15 out of 20 donations</p>
+                    <p class="goal-time">11 days left</p>
+                </div>
+            </div>
+            
+            <div class="goal-card">
+                <div class="goal-header">
+                    <h3>Waste Reduction Target</h3>
+                    <p class="goal-progress">60% Complete</p>
+                </div>
+                <div class="goal-progress-bar">
+                    <div class="progress" style="width: 60%;"></div>
+                </div>
+                <div class="goal-details">
+                    <p>60 out of 100 kg saved</p>
+                    <p class="goal-time">Quarterly Goal</p>
+                </div>
+            </div>
+            
+            <div class="goal-card">
+                <div class="goal-header">
+                    <h3>Community Impact</h3>
+                    <p class="goal-progress">82% Complete</p>
+                </div>
+                <div class="goal-progress-bar">
+                    <div class="progress" style="width: 82%;"></div>
+                </div>
+                <div class="goal-details">
+                    <p>82 out of 100 people helped</p>
+                    <p class="goal-time">Annual Goal</p>
+                </div>
+            </div>
+        </div>
+        <div class="goals-cta">
+            <button class="btn primary">Set New Goals</button>
+            <button class="btn secondary">Adjust Current Goals</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2><i class="fas fa-seedling"></i> EcoFood</h2>
+                <p>Reducing waste, feeding communities</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="donation.html">Donate</a></li>
+                    <li><a href="add-food.html">Add Food</a></li>
+                    <li><a href="analytics.html">Analytics</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 EcoFood | Food Waste Management System</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample charts initialization script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Monthly Donation Trend Chart
+            const donationTrendCtx = document.getElementById('donationTrendChart').getContext('2d');
+            const donationTrendChart = new Chart(donationTrendCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                    datasets: [{
+                        label: 'Donations (kg)',
+                        data: [12, 19, 15, 25, 22, 30, 25],
+                        borderColor: '#4CAF50',
+                        backgroundColor: 'rgba(76, 175, 80, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            
+            // Donation by Category Chart
+            const donationCategoryCtx = document.getElementById('donationCategoryChart').getContext('2d');
+            const donationCategoryChart = new Chart(donationCategoryCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Produce', 'Bakery', 'Dairy', 'Grains', 'Other'],
+                    datasets: [{
+                        label: 'Donations by Category',
+                        data: [35, 20, 15, 20, 10],
+                        backgroundColor: [
+                            '#4CAF50',
+                            '#8BC34A',
+                            '#CDDC39',
+                            '#FFC107',
+                            '#FF9800'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+            
+            // Environmental Impact Chart
+            const environmentalImpactCtx = document.getElementById('environmentalImpactChart').getContext('2d');
+            const environmentalImpactChart = new Chart(environmentalImpactCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                    datasets: [{
+                        label: 'CO₂ Emissions Saved (kg)',
+                        data: [5, 8, 6, 10, 9, 12, 10],
+                        backgroundColor: '#4CAF50'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            
+            // Wastage Reduction Chart
+            const wastageReductionCtx = document.getElementById('wastageReductionChart').getContext('2d');
+            const wastageReductionChart = new Chart(wastageReductionCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                    datasets: [{
+                        label: 'Food Wastage (kg)',
+                        data: [30, 28, 25, 22, 20, 18, 15],
+                        borderColor: '#F44336',
+                        backgroundColor: 'rgba(244, 67, 54, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            
+            // Community Impact Chart
+            const communityImpactCtx = document.getElementById('communityImpactChart').getContext('2d');
+            const communityImpactChart = new Chart(communityImpactCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                    datasets: [{
+                        label: 'People Helped',
+                        data: [15, 25, 20, 30, 28, 35, 30],
+                        backgroundColor: '#2196F3'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
